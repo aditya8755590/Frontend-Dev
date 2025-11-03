@@ -1,0 +1,55 @@
+.card-container{
+    width: 60vh;
+    height: 75vh;
+    background-color: red;
+    margin: 0 auto;
+    margin-top: 120px;
+    padding: 4vh;
+}
+.top-card{
+    width: 60vh;
+    height: 25vh;
+    background-color: rgb(198, 163, 208);
+    border-radius: 15px;
+    padding-top: 8vh;
+}
+.inside-top{
+    width: 40vh;
+    height: 15vh;
+    background-color: aliceblue;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+.three-cards{
+    margin-top: 6vh;
+    display: flex;
+    gap: 4vh;
+    justify-content: center;
+
+
+}
+.single{
+    margin-top: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    height: 3vh;
+    width: 10vh;
+    border-radius: 20px;
+    background-color: rgb(84, 100, 100);
+}
+
+.card{
+    height: 15vh;
+    width: 10vh;
+    background-color: rgb(25, 22, 22);
+    border-radius: 15px;
+}
+.card2{
+    height: 7vh;
+    width: 9vh;
+    background-color: rgb(81, 78, 78);
+    border-radius: 15px;
+}
