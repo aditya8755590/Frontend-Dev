@@ -1,0 +1,109 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.main{
+    height: 100vh;
+    min-width: 100vh;
+    background-color: rgb(19, 19, 41);
+    padding-top: 5rem;
+}
+main{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    display:flex;
+    gap: 2rem;
+    justify-content: center;
+
+}
+nav{
+    height: 5vh;
+    display: flex;
+    align-items: center;
+}
+nav h1{
+    margin-left: 5rem;
+}
+.white{
+color: white;
+}
+.card{
+    height: 40vh;
+    width:25vh;
+    background-color: white;
+    padding: 5vh;
+    padding-top: 2vh;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    
+}
+.card p{
+    font-size:x-large;
+    text-align: center;
+
+}
+.card button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6vh;
+    width: 18vh;
+    font-size: larger;
+    font-weight:300;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 1rem;
+
+
+}
+.card button:hover{
+    background-color: rgb(0, 255, 170);
+}
+.Credits{
+    display: flex;
+    justify-content: center;
+}
+.Credits p{
+    font-size: 2.2rem;
+    font-weight: 400;
+
+}
+.Credits p sub{
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.price{
+     font-size:2.5rem;
+     font-weight: 900;
+}
+.outside{
+    display: flex;
+    justify-content: center;
+}
+.outside button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6vh;
+    width: 18vh;
+    font-size: larger;
+    font-weight:300;
+    background-color: white;
+    margin-top: 10rem;
+    border: 2px solid black;
+}
+.for-hover{
+    background-color: rgb(0, 255, 128);
+    height: 10%;
+    width: 100%;
+    opacity: 0;
+
+}
+.div-container:hover .for-hover{
+   opacity: 1;
+   background-color: rgb(124, 255, 170);}
+
+

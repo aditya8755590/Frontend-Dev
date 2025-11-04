@@ -1,0 +1,43 @@
+*{
+margin: 0%;
+padding: 0%;
+}
+.border-style{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vh;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+.div{
+    height: 200px;
+    width: 200px;
+    background-color: aliceblue;
+}
+
+.second{
+    background-color: rgb(52, 51, 50);
+}
+.demonstrate{
+    height: 300px;
+    width: 300px;
+    background-color: rgb(123, 56, 154);
+    
+}
+.third-color{
+    background-color: aquamarine;
+}
+.internal{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(155, 128, 179);
+
+}
+.last{
+   border: 20px solid black;
+}
+.last:hover{
+    border: 20px solid rgb(241, 35, 35);
+
+}

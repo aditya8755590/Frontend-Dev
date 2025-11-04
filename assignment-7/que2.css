@@ -1,0 +1,30 @@
+.border-style{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vh;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
+.div1{
+    height: 200px;
+    width: 200px;
+    background-color: rgb(9, 118, 220);
+}
+.div3{
+    height: 20em;
+    width: 20em;
+    background-color: rgb(1, 49, 93);
+}
+.div1{
+    height: 40%;
+    width: 40%;
+    background-color: rgb(1, 29, 55);
+}
+.div4{
+    height: 40vh;
+    width: 40vh;
+    background-color: rgb(1, 29, 55);
+
+}
