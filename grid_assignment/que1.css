@@ -1,0 +1,57 @@
+/* Q1 CSS – beginner friendly, one property per line */
+
+* {
+  box-sizing: border-box;
+}
+html,body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #222222;
+}
+
+/* Fixed header stays on top */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #333333;
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+header a {
+  color: #eeeeee;
+  text-decoration: none;
+  margin-left: 1em;
+}
+
+/* space for the fixed header + layout widths/heights */
+main {
+  padding-top: 72px;
+  padding-left: 5%;
+  padding-right: 5%;
+  min-height: calc(100vh - 120px);
+}
+
+img {
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+footer {
+  background: #333333;
+  color: #ffffff;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 4vh;
+}

@@ -1,0 +1,48 @@
+/* Q3 CSS – team cards with grid and simple responsive rule */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+  color: #222222;
+}
+
+h1 {
+  text-align: center;
+}
+
+.team {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.role {
+  color: #666666;
+  margin-top: -0.25rem;
+}
+
+.lead {
+  background: #eef2ff;
+  border-color: #6366f1;
+}
+
+/* small screens: one column */
+@media (max-width: 600px) {
+  .team {
+    grid-template-columns: 1fr;
+  }
+}

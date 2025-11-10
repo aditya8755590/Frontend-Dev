@@ -1,0 +1,49 @@
+/* Q9 CSS – newspaper-style columns and spanning heading */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f1f5f9;
+  font-family: Georgia, serif;
+  color: #111111;
+  padding: 1rem;
+}
+
+.paper {
+  background: #ffffff;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.25rem;
+  column-count: 3;
+  column-gap: 1.2rem;
+  text-align: justify;
+}
+
+.headline,
+.head {
+  column-span: all;
+  margin: 0 0 1rem 0;
+}
+
+.thumb,
+.left {
+  float: left;
+  margin: 0 0.75rem 0.5rem 0;
+  border-radius: 8px;
+}
+
+/* responsive columns */
+@media (max-width: 800px) {
+  .paper {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 520px) {
+  .paper {
+    column-count: 1;
+  }
+}

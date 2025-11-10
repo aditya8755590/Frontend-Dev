@@ -1,0 +1,164 @@
+/* Q10 CSS – full page demo: box model, positioning, flex/grid, rgba, gradients */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+/* sticky navigation header */
+.stick {
+  position: sticky;
+  top: 0;
+  background: #0f172a;
+  padding: 0.5rem 1rem;
+  z-index: 10;
+}
+
+.nav a {
+  color: #e2e8f0;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+/* hero with layered background and centered content */
+.hero {
+  position: relative;
+  min-height: 60vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+              url('https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1400&q=60')
+              center / cover no-repeat;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  border-bottom: 4px solid rgba(255, 255, 255, 0.2);
+}
+
+/* framed overlay for hero text */
+.center {
+  text-align: center;
+  padding: 1rem 2rem;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  outline: 4px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+}
+
+/* absolute positioned badge */
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #22c55e;
+  color: #0f172a;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+/* fixed positioned small note */
+.fixed {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  background: #2563eb;
+  color: #ffffff;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 20;
+}
+
+/* two-column about section */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  background: linear-gradient(90deg, #ffffff, #f1f5f9);
+  border-top: 1px solid #e5e7eb;
+}
+
+.t {
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.about img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* three service cards */
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.svc {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.best {
+  border-color: #f97316;
+  background: #fff7ed;
+}
+
+/* contact form */
+.contact {
+  padding: 1rem;
+}
+
+.form {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 560px;
+}
+
+.form input,
+.form textarea {
+  padding: 0.6rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+button {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #0ea5e9;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* footer */
+.foot {
+  text-align: center;
+  padding: 1rem;
+  color: #64748b;
+}
+
+/* responsive tweaks */
+@media (max-width: 720px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+  .services {
+    grid-template-columns: 1fr;
+  }
+}
