@@ -1,0 +1,30 @@
+/* attribute selector */
+input[type="text"] {
+  border: 1px solid #555;
+  padding: 0.5rem;
+}
+
+/* link starts with https */
+a[href^="https"] {
+  color: blue;
+}
+
+/* nth-child */
+.items li:nth-child(2) {
+  font-weight: bold;
+}
+
+/* hover */
+a:hover {
+  text-decoration: underline;
+}
+
+/* pseudo-elements */
+.items li::before {
+  content: "• ";
+}
+
+/* descendant selector */
+.items li {
+  margin-bottom: 0.5rem;
+}

@@ -1,0 +1,22 @@
+* {
+  box-sizing: content-box;
+}
+
+body {
+  margin: 0;
+  background: #e5e7eb;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.box-model {
+  background: #fff;
+  padding: 20px;
+  border: 8px solid #4b5563;
+  margin: 40px;
+}

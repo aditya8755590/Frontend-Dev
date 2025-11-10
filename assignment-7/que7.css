@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  padding: 1rem;
+  line-height: 1.6;
+}
+
+.text h1 {
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.text p::first-letter {
+  font-size: 150%;
+}
+
+.text p::first-line {
+  font-weight: bold;
+}
+
+mark {
+  background: yellow;
+}
+
+strong {
+  color: #111;
+}
+
+em {
+  color: #555;
+}

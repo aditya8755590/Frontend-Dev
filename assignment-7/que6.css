@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f3f4f6;
+  font-family: Arial, sans-serif;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.box {
+  width: 120px;
+  height: 120px;
+  background: #93c5fd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease;
+}
+
+.rotate:hover {
+  transform: rotate(15deg);
+}
+
+.scale:hover {
+  transform: scale(1.2);
+}
+
+.translate:hover {
+  transform: translateY(-10px);
+}
+
+.skew:hover {
+  transform: skewX(15deg);
+}
