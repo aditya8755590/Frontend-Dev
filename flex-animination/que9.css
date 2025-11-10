@@ -1,0 +1,46 @@
+*{
+box-sizing:border-box}
+html,body{
+height:100%}
+body{
+margin:0;
+background:#0f172a;
+color:#e5e7eb;
+font-family:Arial,sans-serif}
+.stage{
+height:100%;
+display:flex;
+align-items:center;
+justify-content:center}
+.scene{
+perspective:1000px}
+.card{
+width:260px;
+height:180px;
+position:relative;
+transform-style:preserve-3d;
+transition:transform .6s ease}
+.card:hover{
+transform:rotateY(180deg)}
+.face{
+position:absolute;
+inset:0;
+backface-visibility:hidden;
+border-radius:12px;
+overflow:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:.75rem}
+.front{
+background:#1f2937;
+border:1px solid #334155;
+gap:.5rem;
+flex-direction:column}
+.front img{
+border-radius:8px;
+display:block}
+.back{
+background:#111827;
+border:1px solid #1f2937;
+transform:rotateY(180deg)}

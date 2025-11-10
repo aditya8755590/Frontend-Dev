@@ -1,0 +1,51 @@
+*{
+box-sizing:border-box}
+body{
+margin:0;
+font-family:Arial,sans-serif;
+color:#111;
+background:#f7fafc}
+
+.header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:1rem;
+background:#0f172a;
+color:#fff}
+
+.header .nav a{
+color:#e2e8f0;
+text-decoration:none;
+margin-left:1rem}
+
+.main{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:1rem;
+padding:1rem;
+min-height:50vh}
+
+.about,.photo{
+background:#fff;
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:1rem;
+flex:1 1 320px}
+
+.photo img{
+width:100%;
+display:block;
+border-radius:8px}
+
+.footer{
+text-align:center;
+padding:1rem;
+background:#0f172a;
+color:#fff}
+
+@media (max-width:700px){
+.main{
+flex-direction:column}
+}
