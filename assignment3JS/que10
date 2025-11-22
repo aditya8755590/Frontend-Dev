@@ -1,0 +1,3 @@
+// hosted var ka hai 
+console.log(x);
+var x = 10;
