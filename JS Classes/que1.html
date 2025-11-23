@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Manager</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+            background: #f2f2f2;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        .product {
+            background: white;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>E-Commerce Product List</h2>
+
+<div id="productContainer"></div>
+
+<script>
+
+class Product {
+    constructor(id, name, price, category) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.category = category;
+    }
+
+    applyDiscount(percent) {
+        this.price = this.price - (this.price * percent / 100);
+    }
+
+    displayDetails() {
+        return `ID: ${this.id} | ${this.name} | ₹${this.price} | ${this.category}`;
+    }
+}
+
+// create multiple products
+const products = [
+    new Product(1, "Laptop", 50000, "Electronics"),
+    new Product(2, "Shoes", 1500, "Fashion"),
+    new Product(3, "Mouse", 500, "Electronics"),
+    new Product(4, "Mobile", 12000, "Electronics"),
+];
+
+// apply discount to one sample
+products[0].applyDiscount(10);
+
+// filter price > 1000
+const expensive = products.filter(p => p.price > 1000);
+
+console.log("Products price > 1000:");
+console.log(expensive);
+
+// display on webpage
+let box = document.getElementById("productContainer");
+
+expensive.forEach(p => {
+    let div = document.createElement("div");
+    div.classList.add("product");
+    div.textContent = p.displayDetails();
+    box.appendChild(div);
+});
+
+</script>
+
+</body>
+</html>

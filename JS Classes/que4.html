@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Form Builder</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        .formBox{
+            border: 2px solid #555;
+            padding: 15px;
+            width: 300px;
+            border-radius: 6px;
+        }
+
+        label{
+            display:block;
+            margin-top: 10px;
+        }
+
+        input{
+            padding: 8px;
+            width: 260px;
+            border-radius: 5px;
+            border: 2px solid #aaa;
+            margin-top: 3px;
+        }
+
+        button{
+            padding: 8px 16px;
+            margin-top: 15px;
+            border: none;
+            color: white;
+            background: green;
+            border-radius: 5px;
+            cursor:pointer;
+        }
+
+        .output{
+            margin-top: 20px;
+            white-space: pre;
+            background: #eee;
+            padding: 15px;
+            width: 300px;
+            border-radius: 6px;
+        }
+
+    </style>
+</head>
+<body>
+
+<h2>Dynamic Form Builder</h2>
+
+<div id="formContainer"></div>
+
+<div class="output" id="result"></div>
+
+
+<script>
+
+class FormBuilder{
+
+    constructor(fields){
+        this.fields = fields;
+    }
+
+    render(parentId){
+
+        let parent = document.getElementById(parentId);
+
+        let form = document.createElement("form");
+        form.className = "formBox"
+        form.id = "dynamicForm";
+
+        this.fields.forEach(f => {
+            form.innerHTML += `
+                <label>${f.label}</label>
+                <input type="${f.type}" id="${f.label}">
+            `;
+        });
+
+        form.innerHTML += `<button type="button" onclick="getData()">Submit</button>`;
+
+        parent.appendChild(form);
+    }
+}
+
+
+
+let fields = [
+    {type:'text', label:'Username'},
+    {type:'email', label:'Email'},
+    {type:'password', label:'Password'}
+];
+
+let fb = new FormBuilder(fields);
+
+fb.render("formContainer");
+
+
+function getData(){
+    let res = {};
+
+    fields.forEach(f => {
+        let inp = document.getElementById(f.label).value;
+        res[f.label] = inp;
+    });
+
+    document.getElementById("result").innerText = JSON.stringify(res, null, 2);
+}
+
+</script>
+
+</body>
+</html>

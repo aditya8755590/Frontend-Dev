@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        h2{
+            margin-bottom: 20px;
+        }
+
+        input{
+            width: 250px;
+            padding: 8px;
+            margin-bottom: 5px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            display: block;
+        }
+
+        input.valid{
+            border-color: green;
+        }
+
+        input.invalid{
+            border-color: red;
+        }
+
+        .error{
+            color: red;
+            font-size: 13px;
+            margin-top: -5px;
+            margin-bottom: 10px;
+        }
+
+        button{
+            padding: 8px 18px;
+            margin-top: 10px;
+            border: none;
+            background: blue;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h2>Student Registration Form</h2>
+
+    <form id="studentForm">
+
+        <label>Name</label>
+        <input type="text" id="name">
+        <p class="error" id="nameError"></p>
+
+        <label>Email</label>
+        <input type="text" id="email">
+        <p class="error" id="emailError"></p>
+
+        <label>Phone</label>
+        <input type="text" id="phone">
+        <p class="error" id="phoneError"></p>
+
+        <label>Password</label>
+        <input type="password" id="password">
+        <p class="error" id="passwordError"></p>
+
+        <button type="submit">Register</button>
+
+    </form>
+
+
+
+    <script>
+
+        const form = document.getElementById("studentForm");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let name = document.getElementById("name");
+            let email = document.getElementById("email");
+            let phone = document.getElementById("phone");
+            let password = document.getElementById("password");
+
+            let nameReg = /^[A-Za-z ]+$/;
+            let emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let phoneReg = /^[0-9]{10}$/;
+            let passReg = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])/;
+
+            validate(name, nameReg, "nameError", "Enter alphabets only");
+            validate(email, emailReg, "emailError", "Invalid email");
+            validate(phone, phoneReg, "phoneError", "Phone must be 10 digits");
+            validate(password, passReg, "passwordError", "Must contain uppercase, number, special char");
+
+        });
+
+        function validate(input, regex, errorId, message){
+            if(regex.test(input.value)){
+                input.classList.add("valid");
+                input.classList.remove("invalid");
+                document.getElementById(errorId).innerText = "";
+            } else {
+                input.classList.add("invalid");
+                input.classList.remove("valid");
+                document.getElementById(errorId).innerText = message;
+            }
+        }
+
+    </script>
+
+</body>
+</html>

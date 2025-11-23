@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Ticket Booking</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            padding: 20px;
+        }
+        h2{
+            margin-bottom: 15px;
+        }
+
+        input{
+            padding: 8px;
+            width: 260px;
+            display: block;
+            margin-bottom: 6px;
+            border: 2px solid #aaa;
+            border-radius: 5px;
+        }
+
+        input.valid{
+            border-color: green;
+        }
+
+        input.invalid{
+            border-color: red;
+        }
+
+        .error{
+            color: red;
+            font-size: 13px;
+            margin-top: -4px;
+            margin-bottom: 8px;
+        }
+
+        button{
+            padding: 8px 18px;
+            margin-top: 5px;
+            border: none;
+            background: blue;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .ticketBox{
+            margin-top: 20px;
+            padding: 15px;
+            background: #eee;
+            border-radius: 6px;
+            width: 300px;
+            white-space: pre;
+        }
+
+    </style>
+</head>
+<body>
+
+<h2>Movie Ticket Booking Form</h2>
+
+<form id="form">
+
+    <label>Name</label>
+    <input type="text" id="name">
+    <p class="error" id="nameErr"></p>
+
+    <label>Email</label>
+    <input type="text" id="email">
+    <p class="error" id="emailErr"></p>
+
+    <label>Seats</label>
+    <input type="text" id="seats">
+    <p class="error" id="seatsErr"></p>
+
+    <button type="submit">Book Ticket</button>
+</form>
+
+<div id="ticket" class="ticketBox"></div>
+
+
+
+<script>
+
+let form = document.getElementById("form");
+
+form.addEventListener("submit",(e)=>{
+
+    e.preventDefault();
+
+    let name = document.getElementById("name");
+    let email = document.getElementById("email");
+    let seats = document.getElementById("seats");
+
+    // RegEx rules
+    let nameReg = /^[A-Za-z ]+$/;
+    let emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let seatsReg = /^[1-9]$|^10$/;  // only 1 to 10 allowed
+
+    let valid = true;
+
+    valid &= check(name, nameReg, "nameErr", "Use alphabets only");
+    valid &= check(email, emailReg, "emailErr", "Invalid email");
+    valid &= check(seats, seatsReg, "seatsErr", "Seats must be between 1 to 10");
+
+    if(valid){
+        let booking = {
+            name: name.value,
+            email: email.value,
+            seats: seats.value
+        };
+
+        document.getElementById("ticket").innerText =
+            "🎟 Movie Ticket Booked\n\n" +
+            JSON.stringify(booking, null, 2);
+    }
+
+});
+
+
+function check(input, regex, errId, message){
+
+    if(regex.test(input.value)){
+        input.classList.add("valid");
+        input.classList.remove("invalid");
+        document.getElementById(errId).innerText = "";
+        return true;
+
+    } else {
+        input.classList.add("invalid");
+        input.classList.remove("valid");
+        document.getElementById(errId).innerText = message;
+        return false;
+    }
+}
+
+</script>
+
+</body>
+</html>

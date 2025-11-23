@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management System</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            padding: 25px;
+        }
+
+        h2{
+            margin-bottom: 20px;
+        }
+
+        .book{
+            padding: 10px;
+            border: 1px solid #888;
+            width: 260px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+        }
+
+        #issueBox{
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px solid #444;
+            width: 260px;
+        }
+
+        input{
+            padding: 7px;
+            width: 240px;
+            margin-top: 6px;
+            border: 2px solid #aaa;
+            border-radius: 5px;
+        }
+
+        button{
+            margin-top: 10px;
+            padding: 7px 18px;
+            background: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .success{
+            color: green;
+            margin-top: 10px;
+        }
+        .error{
+            color: red;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>Library Management System</h2>
+
+    <h3>Available Books</h3>
+    <div id="bookList"></div>
+
+    <div id="issueBox">
+        <h4>Issue a Book</h4>
+        <input type="text" id="isbnInput" placeholder="Enter ISBN">
+        <button onclick="issue()">Issue</button>
+        <p id="msg"></p>
+    </div>
+
+
+<script>
+
+    class Book{
+        constructor(title, author, isbn){
+            this.title = title;
+            this.author = author;
+            this.isbn = isbn;
+            this.isIssued = false;
+        }
+
+        issueBook(){
+            this.isIssued = true;
+        }
+
+        returnBook(){
+            this.isIssued = false;
+        }
+    }
+
+    let books = [
+        new Book("Harry Potter","J.K Rowling", "111"),
+        new Book("Atomic Habits","James Clear", "222"),
+        new Book("The Alchemist","Paulo Coelho", "333"),
+        new Book("Wings of Fire","A.P.J Abdul Kalam","444"),
+    ];
+
+
+    function showBooks(){
+
+        let div = document.getElementById("bookList");
+        div.innerHTML = "";
+
+        books.forEach(b => {
+            if(!b.isIssued){
+                div.innerHTML += `
+                    <div class="book">
+                        <b>${b.title}</b><br>
+                        Author: ${b.author}<br>
+                        ISBN: ${b.isbn}
+                    </div>
+                `;
+            }
+        });
+    }
+
+    showBooks();
+
+
+    function issue(){
+        let isbn = document.getElementById("isbnInput").value;
+        let msg = document.getElementById("msg");
+
+        let found = books.find(b => b.isbn === isbn);
+
+        if(!found){
+            msg.innerHTML = "<span class='error'>Book not found!</span>";
+            return;
+        }
+
+        if(found.isIssued){
+            msg.innerHTML = "<span class='error'>Already issued!</span>";
+            return;
+        }
+
+        found.issueBook();
+
+        msg.innerHTML = "<span class='success'>Book issued successfully!</span>";
+        
+        showBooks();
+    }
+
+</script>
+
+</body>
+</html>
