@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Q4 - CSS Selectors Practice</title>
+  <link rel="stylesheet" href="q4.css" />
+</head>
+<body>
+  <header>
+    <h1>CSS Selectors Practice Page</h1>
+  </header>
+
+  <main>
+    <section class="content">
+      <h2>Basic Selectors</h2>
+      <p>This paragraph is styled using an <strong>element selector</strong>.</p>
+
+      <p class="highlight">This paragraph uses a <strong>class selector</strong> (.highlight).</p>
+
+      <p id="special-paragraph">This one uses an <strong>ID selector</strong> (#special-paragraph).</p>
+
+      <a href="https://example.com" class="link-item" target="_blank">Attribute selector on this link (href)</a>
+
+      <section class="list-section">
+        <h2>Combinators</h2>
+        <ul>
+          <li>First item</li>
+          <li class="next-to-important">This item is next to an important one</li>
+          <li class="important">Important item (descendant selector target)</li>
+          <li>Sibling item 1</li>
+          <li>Sibling item 2</li>
+        </ul>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; CSS Selectors Example</p>
+  </footer>
+</body>
+</html>

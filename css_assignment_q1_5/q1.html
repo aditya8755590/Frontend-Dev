@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Q1 - Pseudo-Classes Demonstration</title>
+  <link rel="stylesheet" href="q1.css" />
+</head>
+<body>
+  <header>
+    <h1>Pseudo-Classes Demonstration</h1>
+  </header>
+
+  <main>
+    <section class="examples-row">
+      <article class="example-card">
+        <h2>:hover on Links</h2>
+        <p>
+          <a href="#" class="hover-link">Hover over this link</a>
+        </p>
+        <p class="note">
+          <strong>:hover</strong> applies when the mouse pointer is over an element.
+        </p>
+      </article>
+
+      <article class="example-card">
+        <h2>:focus on Inputs</h2>
+        <p>
+          <label for="focus-input">Click here and type:</label>
+          <input id="focus-input" type="text" placeholder="Focus highlights border" />
+        </p>
+        <p class="note">
+          <strong>:focus</strong> activates when an element is focused using mouse or keyboard.
+        </p>
+      </article>
+
+      <article class="example-card">
+        <h2>:active on Buttons</h2>
+        <p>
+          <button class="active-btn">Press and hold me</button>
+        </p>
+        <p class="note">
+          <strong>:active</strong> applies while the element is being clicked.
+        </p>
+      </article>
+
+      <article class="example-card">
+        <h2>:nth-child() on List Items</h2>
+        <ul class="nth-list">
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+          <li>Item 5</li>
+        </ul>
+        <p class="note">
+          <strong>:nth-child()</strong> targets specific children based on their position.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; Pseudo-Classes Examples</p>
+  </footer>
+</body>
+</html>
