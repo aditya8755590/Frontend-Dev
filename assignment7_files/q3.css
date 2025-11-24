@@ -1,0 +1,33 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.container {
+  max-width: 400px;
+}
+
+.step {
+  display: none;
+}
+
+.step.active {
+  display: block;
+}
+
+.buttons {
+  margin-top: 15px;
+}
+
+.buttons button {
+  margin-right: 8px;
+}
+
+.error {
+  color: #b00020;
+  font-size: 0.9rem;
+}
+
+.hidden {
+  display: none;
+}

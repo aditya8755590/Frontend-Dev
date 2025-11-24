@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.container {
+  max-width: 500px;
+}
+
+#message {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#counter {
+  font-weight: bold;
+}
+
+#counter.yellow {
+  color: #b8860b;
+}
+
+#counter.red {
+  color: #b00020;
+}

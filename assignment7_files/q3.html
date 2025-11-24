@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Q3 - Multi-Step Form</title>
+  <link rel="stylesheet" href="q3.css" />
+</head>
+<body>
+  <h1>Q3 - Multi-Step Form</h1>
+  <div class="container">
+    <form id="multiForm">
+      <div class="step" data-step="1">
+        <h2>Step 1: Name</h2>
+        <label>
+          Name:
+          <input type="text" id="nameInput" />
+        </label>
+        <div class="error" id="nameError"></div>
+      </div>
+
+      <div class="step" data-step="2">
+        <h2>Step 2: Email</h2>
+        <label>
+          Email:
+          <input type="email" id="emailInput" />
+        </label>
+        <div class="error" id="emailError"></div>
+      </div>
+
+      <div class="step" data-step="3">
+        <h2>Step 3: Password</h2>
+        <label>
+          Password:
+          <input type="password" id="passwordInput" />
+        </label>
+        <div class="error" id="passwordError"></div>
+      </div>
+
+      <div class="buttons">
+        <button type="button" id="backBtn">Back</button>
+        <button type="button" id="nextBtn">Next</button>
+      </div>
+    </form>
+
+    <div id="summary" class="hidden">
+      <h2>Summary</h2>
+      <p><strong>Name:</strong> <span id="summaryName"></span></p>
+      <p><strong>Email:</strong> <span id="summaryEmail"></span></p>
+      <p><strong>Password:</strong> <span id="summaryPassword"></span></p>
+    </div>
+  </div>
+
+  <script src="q3.js"></script>
+</body>
+</html>

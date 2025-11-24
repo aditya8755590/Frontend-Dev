@@ -1,0 +1,24 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.theme-light {
+  background: #ffffff;
+  color: #000000;
+}
+
+.theme-dark {
+  background: #121212;
+  color: #ffffff;
+}
+
+.theme-blue {
+  background: #e3f2fd;
+  color: #0d47a1;
+}
+
+.buttons button {
+  margin-right: 8px;
+}

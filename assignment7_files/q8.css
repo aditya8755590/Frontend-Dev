@@ -1,0 +1,32 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border: 1px solid #ccc;
+  background: #fff;
+  min-width: 150px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-list .option {
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.dropdown-list .option:hover {
+  background: #f0f0f0;
+}
+
+.hidden {
+  display: none;
+}

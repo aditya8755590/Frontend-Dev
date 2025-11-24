@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Q9 - Form Submit Blocker</title>
+  <link rel="stylesheet" href="q9.css" />
+</head>
+<body>
+  <h1>Q9 - Form Submit Blocker</h1>
+  <form id="userForm" novalidate>
+    <div class="field">
+      <label>
+        Name:
+        <input type="text" id="nameField" />
+      </label>
+      <div class="error" id="nameFieldError"></div>
+    </div>
+
+    <div class="field">
+      <label>
+        Email:
+        <input type="email" id="emailField" />
+      </label>
+      <div class="error" id="emailFieldError"></div>
+    </div>
+
+    <div class="field">
+      <label>
+        Password:
+        <input type="password" id="passwordField" />
+      </label>
+      <div class="error" id="passwordFieldError"></div>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="successMessage" class="success"></p>
+
+  <script src="q9.js"></script>
+</body>
+</html>
