@@ -1,0 +1,10 @@
+/* Override Bootstrap theme variables */
+:root {
+    --bs-primary: #ff6f61; /* custom primary color */
+    --bs-font-sans-serif: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* Ensure body uses custom font */
+body {
+    font-family: var(--bs-font-sans-serif);
+}

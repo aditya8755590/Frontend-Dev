@@ -1,0 +1,77 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  color: #222;
+}
+
+.site-header,
+.site-footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background-color: #222;
+  color: #fff;
+}
+
+.site-header p {
+  margin: 0.5rem 0 0;
+}
+
+.card-section {
+  padding: 2rem 1rem 3rem;
+}
+
+.card-row {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;          /* Flexbox for cards */
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Base card style */
+.info-card {
+  flex: 1 1 22%;          /* Will be overridden by media queries */
+  background-color: #fff;
+  padding: 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: background-color 0.2s ease;
+}
+
+.info-card h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.info-card p {
+  margin: 0;
+  color: #555;
+}
+
+/* Hover background color change */
+.info-card:hover {
+  background-color: #e3f2fd;
+}
+
+/* Desktop: 4 columns (already achieved with flex: 1 1 22%) */
+
+/* Tablet: max-width 900px -> 2 columns */
+@media (max-width: 900px) {
+  .info-card {
+    flex: 1 1 calc(50% - 1rem);
+  }
+}
+
+/* Mobile: max-width 600px -> 1 column */
+@media (max-width: 600px) {
+  .info-card {
+    flex: 1 1 100%;
+  }
+}

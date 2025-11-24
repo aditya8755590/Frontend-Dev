@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Design Principles Summary</title>
+  <link rel="stylesheet" href="responsive-design-principles-summary.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Responsive Design Principles</h1>
+  </header>
+
+  <main>
+    <section class="principles-section">
+      <div class="principles-grid">
+        <article class="principle-box">
+          <h2>Fluid Layouts</h2>
+          <p>Use percentages or flexible units instead of fixed pixel widths.</p>
+          <pre><code>.container {"{ width: 90%; max-width: 1100px; }"}</code></pre>
+        </article>
+        <article class="principle-box">
+          <h2>Flexible Media</h2>
+          <p>Images and videos should scale with their containers.</p>
+          <pre><code>img {"{ max-width: 100%; height: auto; }"}</code></pre>
+        </article>
+        <article class="principle-box">
+          <h2>Breakpoints</h2>
+          <p>Introduce media queries where the design naturally breaks.</p>
+          <pre><code>@media (max-width: 600px) {"{ ... }"}</code></pre>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Hover over each box to see a gradient highlight.</p>
+  </footer>
+</body>
+</html>

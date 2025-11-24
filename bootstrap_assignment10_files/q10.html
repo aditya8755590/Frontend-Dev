@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q10 - Travel Agency Showcase</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="q10.css">
+</head>
+<body>
+<header class="bg-dark text-white py-4 mb-4">
+    <div class="container d-flex flex-column flex-md-row align-items-md-center justify-content-between">
+        <div>
+            <h1 class="h3 mb-1">WanderWorld Travels</h1>
+            <p class="mb-0 text-white-50">Discover destinations across the globe.</p>
+        </div>
+        <span class="badge bg-success mt-3 mt-md-0">Seasonal offers live</span>
+    </div>
+</header>
+
+<main class="container mb-5">
+    <!-- Bootstrap Carousel -->
+    <section class="mb-4">
+        <div id="destinationCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="4000">
+                    <img src="https://via.placeholder.com/1200x450?text=Santorini,+Greece" class="d-block w-100" alt="Santorini, Greece">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+                        <h2 class="h4">Santorini, Greece</h2>
+                        <p>Sunsets, whitewashed houses, and crystal blue waters.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="https://via.placeholder.com/1200x450?text=Kyoto,+Japan" class="d-block w-100" alt="Kyoto, Japan">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+                        <h2 class="h4">Kyoto, Japan</h2>
+                        <p>Historic temples, cherry blossoms, and quiet streets.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="3500">
+                    <img src="https://via.placeholder.com/1200x450?text=Swiss+Alps" class="d-block w-100" alt="Swiss Alps">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+                        <h2 class="h4">Swiss Alps</h2>
+                        <p>Snowy peaks, scenic trains, and alpine villages.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Carousel controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#destinationCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#destinationCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Progress bar for booking completion -->
+    <section class="mb-4">
+        <h2 class="h5 mb-2">Your booking progress</h2>
+        <div class="progress" role="progressbar" aria-label="Booking completion" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+            <!-- .progress-bar-striped and .progress-bar-animated for visual feedback -->
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: 70%;">70%</div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-dark text-white py-4 mt-auto">
+    <div class="container">
+        <div class="row gy-3">
+            <div class="col-md-6">
+                <h2 class="h6">Contact Us</h2>
+                <p class="mb-1">Email: trips@wanderworld.com</p>
+                <p class="mb-0">Phone: +91-98765-00011</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <h2 class="h6">Office Hours</h2>
+                <p class="mb-1">Mon – Sat: 9:00 AM – 7:00 PM</p>
+                <p class="mb-0">Address: 21 Travel Street, New Delhi</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- Bootstrap 5 JS Bundle (for components like alerts, carousel) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+/* Global reset and base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #222;
+}
+
+.site-header,
+.site-footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background-color: #222;
+  color: #fff;
+}
+
+.site-header p {
+  margin: 0.5rem 0 0;
+}
+
+/* Gallery section */
+.gallery-section {
+  padding: 1.5rem 1rem 2rem;
+}
+
+/* CSS Grid for responsive layout */
+.gallery-grid {
+  display: grid; /* Grid layout for images */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-item {
+  margin: 0;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+  /* Transition for smooth filter removal */
+  transition: filter 0.3s ease-in-out;
+}
+
+/* Apply different filters to each image */
+.gallery-item:nth-child(1) img {
+  filter: blur(2px);
+}
+
+.gallery-item:nth-child(2) img {
+  filter: grayscale(100%);
+}
+
+.gallery-item:nth-child(3) img {
+  filter: sepia(100%);
+}
+
+.gallery-item:nth-child(4) img {
+  filter: brightness(0.7);
+}
+
+.gallery-item:nth-child(5) img {
+  filter: contrast(150%);
+}
+
+.gallery-item:nth-child(6) img {
+  filter: hue-rotate(90deg);
+}
+
+/* On hover, remove filter */
+.gallery-item img:hover {
+  filter: none;
+}
+
+figcaption {
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  text-align: center;
+  background-color: #fafafa;
+}
+
+/* Below 600px, grid already collapses to a single column
+   because of minmax(200px, 1fr), but we add some extra spacing. */
+@media (max-width: 600px) {
+  .gallery-section {
+    padding-inline: 0.75rem;
+  }
+}

@@ -1,0 +1,11 @@
+/* Hero section with background gradient */
+.hero {
+    min-height: 70vh;
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    color: #fff;
+}
+
+.hero-card {
+    max-width: 380px;
+    margin-left: auto;
+}

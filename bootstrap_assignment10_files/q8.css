@@ -1,0 +1,13 @@
+.pricing-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Highlight Pro plan with primary background */
+.pro-plan {
+    background-color: var(--bs-primary);
+}
+
+.pricing-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.15);
+}

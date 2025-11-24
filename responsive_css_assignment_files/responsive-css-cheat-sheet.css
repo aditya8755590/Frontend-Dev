@@ -1,0 +1,76 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9fafb;
+  color: #222;
+}
+
+.site-header,
+.site-footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background-color: #1f2933;
+  color: #fff;
+}
+
+.site-header p {
+  margin: 0.5rem 0 0;
+}
+
+.cheat-sheet-section {
+  padding: 2rem 1rem 3rem;
+}
+
+/* Grid for cheat sheet topics */
+.cheat-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid; /* CSS Grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.cheat-item {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.25rem 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.cheat-item h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.cheat-item p {
+  margin: 0;
+  color: #444;
+}
+
+.cheat-item code {
+  background-color: #f3f4f6;
+  padding: 0.1rem 0.25rem;
+  border-radius: 4px;
+}
+
+/* Hover effect for interactivity */
+.cheat-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  background-color: #f0f9ff;
+}
+
+/* On small screens, boxes naturally stack because of auto-fit/minmax.
+   We ensure padding is comfortable. */
+@media (max-width: 700px) {
+  .cheat-sheet-section {
+    padding-inline: 0.75rem;
+  }
+}

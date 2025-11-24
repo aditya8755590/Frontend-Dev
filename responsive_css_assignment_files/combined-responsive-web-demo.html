@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Combined Responsive Web Demo</title>
+  <link rel="stylesheet" href="combined-responsive-web-demo.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">ResponsiveDemo</div>
+      <nav class="main-nav">
+        <a href="#">Gallery</a>
+        <a href="#">Guide</a>
+        <a href="#">Cheat Sheet</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="main-grid">
+      <section class="grid-item gallery-preview">
+        <h2>Mini Image Gallery</h2>
+        <div class="gallery-row">
+          <div class="gallery-thumb"></div>
+          <div class="gallery-thumb"></div>
+          <div class="gallery-thumb"></div>
+        </div>
+        <p class="small-text">Example of flexible image thumbnails using Grid.</p>
+      </section>
+
+      <section class="grid-item text-explanation">
+        <h2>What Is Responsive Design?</h2>
+        <p>
+          Responsive design means your layout adjusts gracefully to different screen
+          sizes. Techniques include flexible grids, images that scale, and breakpoints
+          defined with media queries.
+        </p>
+        <p>
+          Hover effects and simple animations can guide user focus without being
+          overwhelming.
+        </p>
+      </section>
+
+      <section class="grid-item cheat-preview">
+        <h2>Cheat Sheet Preview</h2>
+        <ul>
+          <li><strong>Layout:</strong> Use Flexbox and Grid for structure.</li>
+          <li><strong>Typography:</strong> Scale fonts with relative units.</li>
+          <li><strong>Media Queries:</strong> Target specific breakpoints.</li>
+        </ul>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Contact: demo@example.com · Built to demonstrate responsive CSS.</p>
+  </footer>
+</body>
+</html>

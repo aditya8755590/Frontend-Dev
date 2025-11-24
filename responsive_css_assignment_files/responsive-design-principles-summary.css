@@ -1,0 +1,79 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+.site-header,
+.site-footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background-color: #111827;
+  color: #fff;
+}
+
+.principles-section {
+  padding: 2rem 1rem 3rem;
+}
+
+/* Grid layout for principles */
+.principles-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;  /* CSS Grid */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.principle-box {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1.25rem 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.principle-box h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.principle-box p {
+  margin: 0 0 0.75rem;
+  color: #374151;
+}
+
+pre {
+  margin: 0;
+  background-color: #f3f4f6;
+  padding: 0.5rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+}
+
+/* Hover gradient and text color change */
+.principle-box:hover {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: #f9fafb;
+  transform: translateY(-4px);
+}
+
+.principle-box:hover p,
+.principle-box:hover code {
+  color: #e5e7eb;
+}
+
+/* Below 600px: single column layout */
+@media (max-width: 600px) {
+  .principles-grid {
+    grid-template-columns: 1fr;
+  }
+}

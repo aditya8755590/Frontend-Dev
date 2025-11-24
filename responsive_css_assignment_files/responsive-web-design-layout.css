@@ -1,0 +1,105 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fafafa;
+  color: #222;
+}
+
+/* Header with logo left and nav right using Flexbox */
+.site-header {
+  background-color: #222;
+  color: #fff;
+  padding: 0.75rem 1rem;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;              /* Flexbox for logo + nav */
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-size: 0.95rem;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Features section */
+.features-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+  text-align: center;
+}
+
+.intro-text {
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+/* Flexbox row for feature boxes */
+.features-row {
+  display: flex;           /* Flexbox layout */
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.feature-box {
+  flex: 1 1 250px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1.5rem 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-box h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.feature-box p {
+  margin: 0;
+  color: #555;
+}
+
+/* Hover scale effect */
+.feature-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer centered at bottom */
+.site-footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #222;
+  color: #fff;
+}
+
+/* Below 750px, stack feature boxes vertically */
+@media (max-width: 750px) {
+  .features-row {
+    flex-direction: column;
+  }
+}

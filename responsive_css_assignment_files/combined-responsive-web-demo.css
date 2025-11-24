@@ -1,0 +1,125 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f5fb;
+  color: #1f2933;
+}
+
+/* Header with Flexbox navigation */
+.site-header {
+  background-color: #111827;
+  color: #fff;
+  padding: 0.75rem 1rem;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  letter-spacing: 0.03em;
+}
+
+.main-nav a {
+  color: #e5e7eb;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-size: 0.95rem;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Fade-in animation for main grid */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-grid {
+  max-width: 1100px;
+  margin: 1.5rem auto 2.5rem;
+  padding: 0 1rem;
+  display: grid; /* Grid for main content */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.grid-item {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1.5rem 1.25rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grid-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+
+.gallery-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-thumb {
+  height: 60px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+}
+
+.small-text {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.text-explanation p {
+  margin-top: 0;
+  margin-bottom: 0.7rem;
+}
+
+.cheat-preview ul {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.cheat-preview li {
+  margin-bottom: 0.4rem;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 1.25rem 1rem;
+  background-color: #111827;
+  color: #e5e7eb;
+}
+
+/* Below 700px, stack all sections vertically */
+@media (max-width: 700px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+}
