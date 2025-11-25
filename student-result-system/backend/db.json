@@ -1,0 +1,20 @@
+{
+  "students": [
+    {
+      "id": "9840",
+      "name": "aditya ",
+      "email": "gamil.com",
+      "sectionId": "1764094972205",
+      "enrollmentDate": "2025-11-12"
+    },
+    {
+      "id": "7944",
+      "name": "dsfgbfe",
+      "email": "dfsbgcvvfds.gail.com",
+      "sectionId": "1764095014453",
+      "enrollmentDate": ""
+    }
+  ],
+  "sections": [],
+  "results": []
+}
