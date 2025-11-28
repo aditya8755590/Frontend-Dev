@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Q5 - College Timetable Viewer</title>
+  <style>body{font-family:Arial;padding:12px}.item{padding:8px;border-bottom:1px solid #eee}</style>
+</head>
+<body>
+  <h3>Timetable</h3>
+  <select id="day"><option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option></select>
+  <div id="list"></div>
+
+<script>
+const API = 'http://localhost:3006/timetable';
+function load(day){
+  fetch(API + '?day=' + encodeURIComponent(day))
+    .then(r=>r.json())
+    .then(data=>{
+      const div = document.getElementById('list');
+      div.innerHTML = '';
+      if(!data || data.length===0) { div.textContent = 'No classes today.'; return; }
+      data.forEach(x=>{
+        const el = document.createElement('div');
+        el.className='item';
+        el.innerHTML = `<strong>${x.subject}</strong> - ${x.faculty} <div>${x.time}</div>`;
+        div.appendChild(el);
+      });
+    }).catch(()=> document.getElementById('list').textContent = 'Error loading timetable');
+}
+document.getElementById('day').addEventListener('change', e=> load(e.target.value));
+load(document.getElementById('day').value);
+</script>
+</body>
+</html>

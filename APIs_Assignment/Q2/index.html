@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Q2 - Employee Dashboard (XHR + PATCH)</title>
+  <style>
+    body{font-family:Arial;padding:12px}
+    table{border-collapse:collapse;width:100%}
+    th,td{padding:8px;border-bottom:1px solid #eee}
+    .error{color:red}
+  </style>
+</head>
+<body>
+  <h3>Employee Status Dashboard</h3>
+  <div id="msg"></div>
+  <table id="tbl"><thead><tr><th>ID</th><th>Name</th><th>Status</th><th>Toggle</th></tr></thead><tbody></tbody></table>
+<script>
+const API = "http://localhost:3002/employees";
+function showMsg(t,css){ const d = document.getElementById('msg'); d.textContent = t; d.className = css || ''; setTimeout(()=>{ d.textContent=''; d.className=''; },3000); }
+
+function fetchEmployees(){
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', API);
+  xhr.onload = function(){
+    if(xhr.status>=200 && xhr.status<300){
+      const data = JSON.parse(xhr.responseText);
+      const tbody = document.querySelector('#tbl tbody');
+      tbody.innerHTML = '';
+      data.forEach(emp=>{
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${emp.id}</td><td>${emp.name}</td><td class="status">${emp.status}</td>
+          <td><button data-id="${emp.id}" data-status="${emp.status}">${emp.status==='active'?'Set Inactive':'Set Active'}</button></td>`;
+        tbody.appendChild(tr);
+      });
+      attachToggles();
+    } else {
+      showMsg('Failed to load employees','error');
+    }
+  };
+  xhr.onerror = ()=> showMsg('Network error','error');
+  xhr.send();
+}
+
+function attachToggles(){
+  document.querySelectorAll('button[data-id]').forEach(btn=>{
+    btn.onclick = function(){
+      const id = this.getAttribute('data-id');
+      const current = this.getAttribute('data-status');
+      const newStatus = current === 'active' ? 'inactive' : 'active';
+      // optimistic UI
+      this.setAttribute('data-status', newStatus);
+      this.textContent = newStatus === 'active' ? 'Set Inactive' : 'Set Active';
+      const statusCell = this.parentElement.parentElement.querySelector('.status');
+      const prevText = statusCell.textContent;
+      statusCell.textContent = newStatus;
+
+      const xhr = new XMLHttpRequest();
+      xhr.open('PATCH', API + '/' + id);
+      xhr.setRequestHeader('Content-Type','application/json;charset=UTF-8');
+      xhr.onload = () => {
+        if(!(xhr.status>=200 && xhr.status<300)){
+          // revert
+          this.setAttribute('data-status', current);
+          this.textContent = current === 'active' ? 'Set Inactive' : 'Set Active';
+          statusCell.textContent = prevText;
+          showMsg('Update failed, reverted','error');
+        }
+      };
+      xhr.onerror = () => {
+        // revert
+        this.setAttribute('data-status', current);
+        this.textContent = current === 'active' ? 'Set Inactive' : 'Set Active';
+        statusCell.textContent = prevText;
+        showMsg('Network error, reverted','error');
+      };
+      xhr.send(JSON.stringify({ status: newStatus }));
+    };
+  });
+}
+
+fetchEmployees();
+</script>
+</body>
+</html>

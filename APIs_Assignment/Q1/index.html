@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Q1 - Live Product Search</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body{font-family:Arial;padding:12px}
+    .product{display:flex;gap:12px;align-items:center;padding:8px;border-bottom:1px solid #eee}
+    .loading{font-style:italic;color:#666}
+    img{width:60px;height:60px;object-fit:cover}
+    #results{margin-top:10px}
+  </style>
+</head>
+<body>
+  <h3>Live Search (/products)</h3>
+  <input id="search" placeholder="Type product name..." autocomplete="off"/>
+  <div id="loading" class="loading" style="display:none">Loading...</div>
+  <div id="results"></div>
+
+<script>
+const API = "http://localhost:3001/products";
+
+let timer=null;
+$('#search').on('input', function(){
+  const q = $(this).val().trim();
+  clearTimeout(timer);
+  $('#loading').show();
+  timer = setTimeout(()=> {
+    $.ajax({
+      url: API + (q?('?q=' + encodeURIComponent(q)):''),
+      method: 'GET',
+      success: function(data){
+        $('#loading').hide();
+        const r = $('#results').empty();
+        if(!data || data.length===0){
+          r.text('No products found');
+          return;
+        }
+        data.forEach(p=>{
+          const el = $('<div class="product">')
+            .append(`<img src="${p.image}" alt="${p.name}">`)
+            .append(`<div><strong>${p.name}</strong><div>₹ ${p.price}</div></div>`);
+          r.append(el);
+        });
+      },
+      error: function(){
+        $('#loading').hide();
+        $('#results').text('Error loading results');
+      }
+    });
+  }, 250);
+});
+</script>
+</body>
+</html>

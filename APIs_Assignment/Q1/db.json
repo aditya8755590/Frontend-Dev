@@ -1,0 +1,9 @@
+{
+  "products": [
+    { "id": 1, "name": "Wireless Mouse", "price": 799, "image": "https://via.placeholder.com/80?text=Mouse" },
+    { "id": 2, "name": "Mechanical Keyboard", "price": 2499, "image": "https://via.placeholder.com/80?text=Keyboard" },
+    { "id": 3, "name": "USB-C Charger", "price": 999, "image": "https://via.placeholder.com/80?text=Charger" },
+    { "id": 4, "name": "Laptop Stand", "price": 1299, "image": "https://via.placeholder.com/80?text=Stand" },
+    { "id": 5, "name": "Webcam 1080p", "price": 1999, "image": "https://via.placeholder.com/80?text=Webcam" }
+  ]
+}

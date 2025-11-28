@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Q4 - Multi API Dashboard (Fetch + Promise.all)</title>
+  <style>body{font-family:Arial;padding:12px}.card{padding:10px;border:1px solid #ddd;display:inline-block;margin:6px;width:150px;text-align:center}</style>
+</head>
+<body>
+  <h3>Dashboard</h3>
+  <div id="dashboard">
+    <div class="card" id="users">Loading...</div>
+    <div class="card" id="orders">Loading...</div>
+    <div class="card" id="products">Loading...</div>
+  </div>
+  <div id="warn" style="color:orange"></div>
+
+<script>
+const endpoints = [
+  'http://localhost:3005/users',
+  'http://localhost:3005/orders',
+  'http://localhost:3005/products'
+];
+document.querySelectorAll('#dashboard .card').forEach(c=>c.textContent='Loading...');
+
+Promise.all(endpoints.map(e=>fetch(e).then(r=>{
+  if(!r.ok) throw new Error('Failed '+e);
+  return r.json();
+}))).then(([users, orders, products])=>{
+  document.getElementById('users').textContent = 'Total users: ' + users.length;
+  document.getElementById('orders').textContent = 'Total orders: ' + orders.length;
+  document.getElementById('products').textContent = 'Total products: ' + products.length;
+}).catch(err=>{
+  // try to show partial data
+  Promise.allSettled(endpoints.map(e=>fetch(e).then(r=>r.ok? r.json(): Promise.reject(e)).catch(()=>null)))
+    .then(results=>{
+      const [u,o,p] = results.map(r => r.status === 'fulfilled' ? r.value : null);
+      if(u) document.getElementById('users').textContent = 'Total users: ' + u.length; else document.getElementById('users').textContent='Users: unavailable';
+      if(o) document.getElementById('orders').textContent = 'Total orders: ' + o.length; else document.getElementById('orders').textContent='Orders: unavailable';
+      if(p) document.getElementById('products').textContent = 'Total products: ' + p.length; else document.getElementById('products').textContent='Products: unavailable';
+      document.getElementById('warn').textContent = 'Some data could not be loaded.';
+    });
+});
+</script>
+</body>
+</html>
