@@ -1,0 +1,7 @@
+body{font-family:Arial,Helvetica,sans-serif;padding:16px;}
+.product{border:1px solid #ddd;padding:12px;margin:10px;border-radius:8px;display:inline-block;width:200px;vertical-align:top;position:relative;}
+.product .details{display:none;margin-top:8px;}
+.product.highlighted{box-shadow:0 4px 14px rgba(0,0,0,0.12);transform:scale(1.02);border-color:#007acc;}
+.product.on-discount{border-left:6px solid #e74c3c;}
+.fav{position:absolute;top:8px;right:8px;border:none;background:transparent;font-size:14px;cursor:pointer;}
+.fav.selected{color:gold;}

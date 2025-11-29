@@ -1,0 +1,5 @@
+body{font-family:Arial,Helvetica,sans-serif;padding:16px;}
+.faq-item{margin-bottom:12px;border-bottom:1px solid #eee;padding-bottom:8px;}
+.question{display:block;width:100%;text-align:left;padding:8px;border:none;background:transparent;font-size:16px;cursor:pointer;}
+.answer{display:none;padding:8px 4px;}
+.answer input{width:100%;padding:6px;margin-top:6px;border:1px solid #ccc;border-radius:4px;}

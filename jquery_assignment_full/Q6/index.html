@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Q6 - Event Subscription</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="script.js" defer></script>
+</head>
+<body>
+<header><h1>Subscriptions</h1></header>
+<main>
+  <section id="subs-panel">
+    <ul id="topics">
+      <li><button class="topic">News</button> <button class="subscribe">Subscribe</button></li>
+      <li><button class="topic">Product Updates</button> <button class="subscribe">Subscribe</button></li>
+      <li><button class="topic">Events</button> <button class="subscribe">Subscribe</button></li>
+      <li><button class="topic">Offers</button> <button class="subscribe">Subscribe</button></li>
+      <li><button class="topic">Community</button> <button class="subscribe">Subscribe</button></li>
+    </ul>
+
+    <div id="controls">
+      <input id="new-topic" placeholder="New topic name"><button id="add-topic">Add Topic</button>
+    </div>
+
+    <div id="messages" aria-live="polite"></div>
+  </section>
+</main>
+<footer><small>Q6 — Subscription panel demo</small></footer>
+</body>
+</html>

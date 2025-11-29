@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Q5 - Team Directory</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="script.js" defer></script>
+</head>
+<body>
+<header><h1>Team Directory</h1></header>
+<main>
+  <section id="directory">
+    <div class="department" data-dept="engineering">
+      <h2 class="dept-title">Engineering</h2>
+      <ul>
+        <li class="member" data-role="manager" data-id="m1">Alice (Manager)
+          <ul class="reports">
+            <li class="member" data-role="engineer" data-id="e1">Bob</li>
+            <li class="member" data-role="engineer" data-id="e2">Carol</li>
+            <li class="member" data-role="engineer" data-id="e3">Dave</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="department" data-dept="design">
+      <h2 class="dept-title">Design</h2>
+      <ul>
+        <li class="member" data-role="manager" data-id="m2">Eve (Manager)
+          <ul class="reports">
+            <li class="member" data-role="designer" data-id="d1">Frank</li>
+            <li class="member" data-role="designer" data-id="d2">Grace</li>
+            <li class="member" data-role="designer" data-id="d3">Heidi</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div id="dir-controls">
+      <button id="random-emp">Select Random Employee</button>
+      <button id="toggle-team">Collapse/Expand Teams</button>
+    </div>
+    <div id="contact-card" aria-live="polite"></div>
+  </section>
+</main>
+<footer><small>Q5 — Team directory demo</small></footer>
+</body>
+</html>
